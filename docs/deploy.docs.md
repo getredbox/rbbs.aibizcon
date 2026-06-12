@@ -1,6 +1,6 @@
 # Deployment
 
-This site is a static single-page app (`index.html` at the repo root, no build step). We host it on **GitHub Pages** and use **Cloudflare** for DNS, TLS, and caching in front of the custom domain **`aibizcon.getredbox.com`**.
+This site is a static single-page app (`index.html` at the repo root, no build step). We host it on **GitHub Pages** and use **Cloudflare** for DNS, TLS, and caching in front of the custom domain **`www.aibizcon.me`**.
 
 ## Architecture
 
@@ -15,7 +15,7 @@ GitHub Pages serves the files from the repository. Cloudflare terminates HTTPS f
 ## Prerequisites
 
 - A GitHub account and a repository for this project (e.g. `rbbs.aibizcon`)
-- The `getredbox.com` zone in Cloudflare (subdomain: **`aibizcon.getredbox.com`**)
+- The **`aibizcon.me`** zone in Cloudflare
 - `index.html` at the **root** of the default branch (already true in this repo)
 
 ---
@@ -36,22 +36,24 @@ No build command or GitHub Action is required for this project.
 
 ## 2. Add a custom domain in GitHub
 
-1. Still under **Settings** → **Pages**, enter **`aibizcon.getredbox.com`** in **Custom domain**.
+1. Still under **Settings** → **Pages**, enter **`www.aibizcon.me`** in **Custom domain**.
 2. Enable **Enforce HTTPS** once DNS has propagated and GitHub shows a valid certificate.
 
-GitHub may prompt you to add a `CNAME` file to the repo; you can accept that or add the record only in Cloudflare (below). A subdomain `CNAME` is all that’s required for `aibizcon.getredbox.com`.
+The repo includes a root **`CNAME`** file set to `www.aibizcon.me` so GitHub Pages serves the custom domain. A subdomain `CNAME` in Cloudflare is all that’s required (below).
 
 ---
 
 ## 3. Configure Cloudflare DNS
 
-In the Cloudflare dashboard for the **`getredbox.com`** zone:
+In the Cloudflare dashboard for the **`aibizcon.me`** zone:
 
-| Type  | Name       | Target                    | Proxy        |
-|-------|------------|---------------------------|--------------|
-| CNAME | `aibizcon` | `<username>.github.io`    | Proxied (orange cloud) |
+| Type  | Name  | Target                    | Proxy        |
+|-------|-------|---------------------------|--------------|
+| CNAME | `www` | `<username>.github.io`    | Proxied (orange cloud) |
 
-This creates **`aibizcon.getredbox.com`** → GitHub Pages.
+This creates **`www.aibizcon.me`** → GitHub Pages.
+
+**Optional — apex redirect:** To send `aibizcon.me` to `www`, add a redirect rule in Cloudflare (Redirect Rules: `aibizcon.me/*` → `https://www.aibizcon.me/$1`).
 
 - Use your GitHub **username or org name**, not the repo name, in the CNAME target (unless GitHub’s Pages UI shows a different target for your setup).
 - Keep the record **proxied** so Cloudflare provides SSL and caching.
@@ -68,7 +70,7 @@ This creates **`aibizcon.getredbox.com`** → GitHub Pages.
 ## 4. Verify
 
 1. Open the GitHub Pages URL and confirm `index.html` loads.
-2. Open [https://aibizcon.getredbox.com](https://aibizcon.getredbox.com) and confirm the same content.
+2. Open [https://www.aibizcon.me](https://www.aibizcon.me) and confirm the same content.
 3. Check **Settings** → **Pages** in GitHub for “DNS check successful” and a valid certificate.
 4. Spot-check fonts (Google Fonts CDN) and outbound links (e.g. ccbizcon.com) over HTTPS.
 
@@ -89,7 +91,7 @@ DNS can take up to 24–48 hours to propagate globally; often it is much faster.
 | Symptom | What to check |
 |---------|----------------|
 | 404 on GitHub URL | Pages source is `/ (root)` and `index.html` is on that branch |
-| 404 on custom domain | CNAME `aibizcon` → `<username>.github.io` in `getredbox.com`; custom domain `aibizcon.getredbox.com` set in GitHub Pages |
+| 404 on custom domain | CNAME `www` → `<username>.github.io` in `aibizcon.me`; custom domain `www.aibizcon.me` set in GitHub Pages |
 | Certificate / HTTPS errors | Cloudflare SSL mode is **Full**; wait for GitHub to issue cert; DNS propagated |
 | Wrong path / broken assets | Project site URLs include `/repo-name/`; use a custom domain or set a `<base href>` if you must use the project URL |
 | Stale content after deploy | Purge Cloudflare cache for the hostname |

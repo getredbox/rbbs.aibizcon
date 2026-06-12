@@ -7,6 +7,7 @@ Static marketing site for CCBIZCON, built as a single HTML page with no build st
 - `index.html` - the complete landing page (HTML, CSS, and JavaScript in one file)
 - `docs/homepage.docs.md` - structure and implementation notes for the homepage
 - `docs/deploy.docs.md` - deployment guide for GitHub Pages + Cloudflare
+- `CNAME` - GitHub Pages custom domain (`www.aibizcon.me`)
 
 ## Tech stack
 
@@ -37,12 +38,13 @@ Production hosting is documented for:
 - GitHub Pages (origin hosting)
 - Cloudflare (DNS, SSL, and caching)
 
-See `docs/deploy.docs.md` for the full step-by-step guide and domain setup for `aibizcon.getredbox.com`.
+See `docs/deploy.docs.md` for the full step-by-step guide and domain setup for `www.aibizcon.me`.
 
 ## Project structure
 
 ```text
 rbbs.aibizcon/
+├── CNAME
 ├── index.html
 ├── README.md
 └── docs/
