@@ -117,15 +117,22 @@
   }
 
   .hero-main {
-    display: grid;
-    grid-template-columns: 1fr minmax(260px, 44%);
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
+    text-align: center;
   }
 
   .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     min-width: 0;
   }
 
@@ -178,6 +185,7 @@
     color: var(--text-primary);
     max-width: 900px;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .hero-title .accent { color: var(--cyan); }
@@ -190,7 +198,8 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--magenta);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .hero-desc {
@@ -199,11 +208,13 @@
     max-width: 520px;
     line-height: 1.7;
     margin-bottom: 3rem;
+    text-align: center;
   }
 
   .hero-actions {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
   }
@@ -252,6 +263,7 @@
     padding: 1.5rem 0;
     border-top: 1px solid var(--card-border);
     display: flex;
+    justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
   }
@@ -878,10 +890,6 @@
     .nav-links { display: none; }
     section, footer { padding: 4rem 1.5rem; }
     .hero { padding: 6rem 1.5rem 3rem; }
-    .hero-main {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
     .frameworks { padding: 2.5rem 1.5rem; }
     .about-grid, .location-grid, .form-row { grid-template-columns: 1fr; gap: 2rem; }
     .hero-title { font-size: clamp(3rem, 12vw, 5rem); }
@@ -968,12 +976,14 @@
   .hero-main,
   .hero-event-bar { position: relative; z-index: 1; }
 
-  /* AI NEURAL NET GRAPHIC — right column on desktop, below copy on mobile */
+  /* AI NEURAL NET GRAPHIC — centered under subtitle */
   .hero-ai-graphic {
+    width: 100%;
+    max-width: 900px;
     height: 180px;
     min-height: 0;
+    margin: 0 0 2.5rem;
     overflow: hidden;
-    align-self: center;
     pointer-events: none;
   }
 
@@ -1272,14 +1282,8 @@
       </h1>
 
       <p class="hero-subtitle">Putting the Pieces of the Technology Puzzle Together</p>
-      <p class="hero-desc">An event for technology professionals and decision makers across the San Francisco Bay Area. The county's BEST technology education event — built for those who shape the future.</p>
 
-      <div class="hero-actions">
-        <a href="https://ccbizcon2026.eventbrite.com" target="_blank" class="btn-primary">Secure Your Spot</a>
-        <a href="#agenda" class="btn-outline">View Agenda</a>
-      </div>
-    </div>
-    <div class="hero-ai-graphic" aria-hidden="true">
+      <div class="hero-ai-graphic" aria-hidden="true">
       <svg viewBox="0 0 900 180" xmlns="http://www.w3.org/2000/svg" width="100%" height="180">
 <defs>
         <!-- Node glow filters -->
@@ -1514,6 +1518,14 @@
       <text x="720" y="172" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#8888AA" fill-opacity=".5"  letter-spacing="1">L5</text>
       <text x="855" y="172" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#00F5FF" fill-opacity=".45" letter-spacing="1.5">OUTPUT</text>
       </svg>
+    </div>
+
+      <p class="hero-desc">An event for technology professionals and decision makers across the San Francisco Bay Area. The county's BEST technology education event — built for those who shape the future.</p>
+
+      <div class="hero-actions">
+        <a href="https://ccbizcon2026.eventbrite.com" target="_blank" class="btn-primary">Secure Your Spot</a>
+        <a href="#agenda" class="btn-outline">View Agenda</a>
+      </div>
     </div>
   </div>
 
