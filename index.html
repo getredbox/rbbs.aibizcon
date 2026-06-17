@@ -29,7 +29,8 @@
       "@id": "https://www.aibizcon.me/#website",
       "url": "https://www.aibizcon.me/",
       "name": "AIBIZCON",
-      "description": "AIBIZCON — Bay Area conference on AI, governance, risk, and compliance"
+      "description": "AIBIZCON — Bay Area conference on AI, governance, risk, and compliance",
+      "publisher": { "@id": "https://www.aibizcon.me/#organization" }
     },
     {
       "@type": "Organization",
@@ -37,13 +38,18 @@
       "name": "AIBIZCON",
       "url": "https://www.aibizcon.me/",
       "email": "info@aibizcon.com",
-      "sameAs": ["https://aibizcon.com"]
+      "sameAs": [
+        "https://aibizcon.com",
+        "https://ccbizcon2026.eventbrite.com"
+      ]
     },
     {
       "@type": "Event",
       "@id": "https://www.aibizcon.me/#event",
       "name": "AIBIZCON 2026",
+      "url": "https://www.aibizcon.me/",
       "description": "AIBIZCON — AI, Governance, Risk & Compliance. Free afternoon conference for Bay Area technology leaders, September 17, 2026 in Brentwood, CA. Companion CCBIZCON event follows September 18.",
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80&auto=format&fit=crop",
       "startDate": "2026-09-17T13:00:00-07:00",
       "endDate": "2026-09-17T17:00:00-07:00",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -56,15 +62,103 @@
           "streetAddress": "35 Oak St",
           "addressLocality": "Brentwood",
           "addressRegion": "CA",
+          "postalCode": "94513",
           "addressCountry": "US"
         }
       },
       "organizer": { "@id": "https://www.aibizcon.me/#organization" },
+      "performer": [
+        { "@type": "Person", "name": "Gretchen Evans", "jobTitle": "Military Leader & ESPN ESPY Recipient" },
+        { "@type": "Person", "name": "Tim Conkle", "jobTitle": "Founder & CEO, The 20" },
+        { "@type": "Person", "name": "Crystal Conkle", "jobTitle": "CMO, The 20 & Co-Founder, CNMD Media" },
+        { "@type": "Person", "name": "Mike Bramm", "jobTitle": "Owner & CEO, BomberJacket Networks" },
+        { "@type": "Person", "name": "Robert Boles", "jobTitle": "Founder & CEO, BLOKWORX" },
+        { "@type": "Person", "name": "Dalton Weger", "jobTitle": "Security Operations, Red Box" },
+        { "@type": "Person", "name": "Duane Leem", "jobTitle": "AI Engineer, Red Box" },
+        { "@type": "Person", "name": "Seana Fippin", "jobTitle": "Co-Founder & CEO, Red Box" },
+        { "@type": "Person", "name": "Bruce McCully", "jobTitle": "CEO + CISO, Galactic Advisors" },
+        { "@type": "Person", "name": "Tanya Mburu", "jobTitle": "CISO, Red Box + STORM-AI" },
+        { "@type": "Person", "name": "Brett Fippin", "jobTitle": "COO, Red Box" },
+        { "@type": "Person", "name": "Mark Adair", "jobTitle": "Title, Company" }
+      ],
       "offers": {
         "@type": "Offer",
         "url": "https://ccbizcon2026.eventbrite.com",
-        "availability": "https://schema.org/InStock"
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "isAccessibleForFree": true
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.aibizcon.me/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When should I register for this event?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI conference tickets in the Bay Area cost an average of $1,850, this powerful technology event is an outstanding value and tickets will sell out soon, so early registration is recommended to secure your seat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who should attend this event?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This event is built for CISOs, CTOs, IT Directors, Managed Service Providers, Value Added Resellers, Technology Integrators, risk and compliance officers, security engineers, and anyone in a technology leadership or decision-making role across the San Francisco Bay Area."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where exactly is this event?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Located in the Bay Area's agricultural jewel, Brentwood. The Conference will be held at Community Center Headquarters — 35 Oak Street, Brentwood, CA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will sessions be recorded or available on-demand?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Select sessions may be made available following the event. Registered attendees will receive information about post-event materials via email. We strongly encourage in-person attendance for the full experience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What compliance frameworks will be covered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sessions will cover AI Governance Frameworks as well as PCI, NIST Cybersecurity Framework (CSF), GLBA, CMMC, and HIPPA. The agenda is designed to provide strategic overviews as well as practical implementation guidance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I become an event sponsor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer Gold, Silver, and Bronze sponsorship tiers with varying levels of visibility, speaking opportunities, and exhibition space. Email info@aibizcon.com or WOW@GETREDBOX.com, or visit aibizcon.com to request a sponsorship prospectus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will there be CPE or CEU credits available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are working to have this event accredited for Continuing Professional Education (CPE) credits applicable to CISSP, CISA, CISM and other security certifications. Details will be confirmed and communicated to registered attendees as options evolve."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I bring colleagues or team members?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely — we encourage teams to attend together. Each individual must register separately due to capacity limits. Group registration inquiries can be sent to info@aibizcon.com or WOW@GETREDBOX.com."
+          }
+        }
+      ]
     }
   ]
 }
@@ -417,6 +511,17 @@
     color: var(--text-muted);
     line-height: 1.7;
     max-width: 640px;
+  }
+
+  .section-body a,
+  .hero-desc a {
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  .section-body a:hover,
+  .hero-desc a:hover {
+    text-decoration: underline;
   }
 
   /* ABOUT */
@@ -885,16 +990,19 @@
   }
 
   .map-link {
-    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--cyan);
     text-decoration: none;
-    border: 1px solid rgba(0,245,255,0.3);
-    padding: 0.5rem 1rem;
+    border: 1px solid rgba(0,245,255,0.4);
+    padding: 0.75rem 1.25rem;
     transition: all 0.2s;
   }
 
@@ -1012,7 +1120,16 @@
     border-radius: 50%;
   }
 
-  /* VENUE IMAGE */
+  .venue-image-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .venue-image-frame {
+    position: relative;
+  }
+
   .venue-image {
     width: 100%;
     height: 280px;
@@ -1022,13 +1139,11 @@
     display: block;
   }
 
-  .venue-image-wrap {
-    position: relative;
-  }
-
   .venue-image-label {
     position: absolute;
-    bottom: 0; left: 0; right: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 0.75rem 1rem;
     background: linear-gradient(0deg, rgba(10,10,18,0.9) 0%, transparent 100%);
     font-family: 'Barlow Condensed', sans-serif;
@@ -1610,7 +1725,7 @@
           </svg>
         </div>
 
-      <p class="hero-desc">An event for technology professionals and decision makers across the San Francisco Bay Area. The county's BEST technology education event — built for those who shape the future.</p>
+      <p class="hero-desc">An event for technology professionals and decision makers across the San Francisco Bay Area. The county's BEST technology education event — built for those who shape the future. <a href="#about">Explore the program</a> or <a href="#register">reserve your seat</a>.</p>
 
         <div class="hero-actions">
           <a href="https://ccbizcon2026.eventbrite.com" target="_blank" class="btn-primary">Secure Your Spot</a>
@@ -1665,7 +1780,7 @@
 <section id="about">
   <div class="section-tag">What You'll Learn</div>
   <h2 class="section-title">The Four Pillars of Modern Business Technology</h2>
-  <p class="section-body">Whether you're a C-SUITE, CISO, CTO, MSP, MSSP, VAR, Tech Integrator, Risk Officer, or Technology Decision Maker, this dynamic event arms you with the knowledge to navigate an increasingly complex organizational landscape.</p>
+  <p class="section-body">Whether you're a C-SUITE, CISO, CTO, MSP, MSSP, VAR, Tech Integrator, Risk Officer, or Technology Decision Maker, this dynamic event arms you with the knowledge to navigate an increasingly complex organizational landscape. See the <a href="#agenda">event agenda</a>, meet our <a href="#speakers">featured speakers</a>, and <a href="#register">register</a> to secure your spot.</p>
 
   <div class="about-grid">
     <div class="topics-list">
@@ -1784,7 +1899,7 @@
 <section id="agenda" class="agenda-section">
   <div class="section-tag">Program</div>
   <h2 class="section-title">Event Agenda</h2>
-  <p class="section-body">Four focused hours of expert-led sessions, panels, and networking — designed for maximum impact with zero filler.</p>
+  <p class="section-body">Four focused hours of expert-led sessions, panels, and networking — designed for maximum impact with zero filler. Sessions feature <a href="#speakers">industry experts</a>; review the <a href="#location">venue</a> and <a href="#register">register</a> before tickets sell out.</p>
 
   <div class="agenda-grid">
     <div class="agenda-item fade-up">
@@ -1866,7 +1981,7 @@
 <section id="speakers" class="speakers-section">
   <div class="section-tag">The Experts</div>
   <h2 class="section-title">Featured Speakers + Partners</h2>
-  <p class="section-body">Industry leaders with PROVEN experience across AI governance, cybersecurity, and regulatory compliance.</p>
+  <p class="section-body">Industry leaders with PROVEN experience across AI governance, cybersecurity, and regulatory compliance. Browse the <a href="#agenda">full agenda</a> or connect with our <a href="#sponsors">event sponsors</a>.</p>
 
   <div class="speakers-grid">
     <div class="speaker-card fade-up">
@@ -1951,7 +2066,7 @@
   <div class="register-inner">
     <div class="section-tag" style="justify-content:center;">Secure Your Seat</div>
     <h2 class="register-title">Ready to <span>Level Up</span><br>Your Business Technology Game?</h2>
-    <p class="section-body" style="text-align:center;margin:0 auto;">Space is limited. Register now to join Bay Area's premier AI, Governance, Risk & Compliance event.</p>
+    <p class="section-body" style="text-align:center;margin:0 auto;">Space is limited. Register now to join Bay Area's premier AI, Governance, Risk & Compliance event. Review the <a href="#agenda">agenda</a> and <a href="#location">venue details</a> before you book.</p>
 
     <div class="register-box fade-up" style="text-align:center;">
       <button class="form-submit" type="button" onclick="window.open('https://ccbizcon2026.eventbrite.com','_blank')" style="width:auto;padding:1rem 3rem;margin:0 auto;">Register Today → AIBIZCON.COM</button>
@@ -1963,7 +2078,7 @@
 <section id="location" class="location-section">
   <div class="section-tag">Getting There</div>
   <h2 class="section-title">The City of Brentwood</h2>
-  <p class="section-body">Conveniently located in the East Bay — easily accessible from across the San Francisco Bay Area.</p>
+  <p class="section-body">Conveniently located in the East Bay — easily accessible from across the San Francisco Bay Area. <a href="#register">Register for AIBIZCON</a> or read the <a href="#faq">FAQ</a> for parking, timing, and attendance details.</p>
 
   <div class="location-grid">
     <div class="location-detail">
@@ -2005,15 +2120,15 @@
     </div>
 
     <div class="venue-image-wrap fade-up">
-      <img
-        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop"
-        alt="Brentwood Community Center venue"
-        class="venue-image"
-      >
-      <div class="venue-image-label">Brentwood Community Center · 35 Oak St, Brentwood CA</div>
-      <div style="margin-top:0.75rem;">
-        <a class="map-link" href="https://maps.google.com/?q=35+Oak+St,+Brentwood,+CA" target="_blank">Open in Google Maps →</a>
+      <div class="venue-image-frame">
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop"
+          alt="Brentwood Community Center venue"
+          class="venue-image"
+        >
+        <div class="venue-image-label">Brentwood Community Center · 35 Oak St, Brentwood CA</div>
       </div>
+      <a class="map-link" href="https://maps.google.com/?q=35+Oak+St,+Brentwood,+CA" target="_blank" rel="noopener">Open in Google Maps →</a>
     </div>
   </div>
 </section>
@@ -2022,7 +2137,7 @@
 <section id="sponsors" class="sponsors-section">
   <div class="section-tag">Our Partners</div>
   <h2 class="section-title">Event Sponsors</h2>
-  <p class="section-body">AIBIZCON is made possible by leading organizations committed to advancing technology education and compliance across the Bay Area.</p>
+  <p class="section-body">AIBIZCON is made possible by leading organizations committed to advancing technology education and compliance across the Bay Area. See <a href="#faq">sponsorship FAQ</a> or <a href="#register">register to attend</a>.</p>
 
   <div class="sponsor-tiers">
     <div class="fade-up">
@@ -2114,7 +2229,7 @@
 <section id="faq" class="faq-section">
   <div class="section-tag">Got Questions?</div>
   <h2 class="section-title">Frequently Asked Questions</h2>
-  <p class="section-body">Everything you need to know before attending. Can't find your answer? Reach out at aibizcon.com.</p>
+  <p class="section-body">Everything you need to know before attending. Can't find your answer? Reach out at <a href="https://aibizcon.com">aibizcon.com</a> or see <a href="#location">venue &amp; directions</a>.</p>
 
   <div class="faq-grid">
     <div class="faq-item fade-up" onclick="toggleFaq(this)">
@@ -2201,6 +2316,7 @@
       <h4>Connect</h4>
       <ul>
         <li><a href="https://aibizcon.com">aibizcon.com</a></li>
+        <li><a href="https://ccbizcon2026.eventbrite.com" target="_blank" rel="noopener">Register on Eventbrite</a></li>
         <li><a href="mailto:info@aibizcon.com">info@aibizcon.com</a></li>
       </ul>
     </div>

@@ -86,7 +86,10 @@ SVG glow filters with `overflow: visible`, SVG before text, or `.hero > * { posi
 
 ## SEO rules
 
+See [aibizcon-seo](../aibizcon-seo/SKILL.md) for full workflow. Summary:
+
 - **AIBIZCON is primary** in title, meta description, OG, Twitter, and JSON-LD `Event`.
+- **Describe, don't invent** — meta keywords/title must match on-page copy; reject audit-only keyword targets.
 - CCBIZCON may appear in hero body copy; mention as companion in meta description only if needed.
 - Fix year to **2026** in SEO and in location/footer when developer left 2025.
 

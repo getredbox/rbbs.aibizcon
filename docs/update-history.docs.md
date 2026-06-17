@@ -4,6 +4,56 @@ Changelog of content and layout updates delivered by the external web developer 
 
 ---
 
+## 2026-06-17 — Location map link visibility
+
+**Integrated into:** `index.html`
+
+### Fixed locally
+
+| Change | Notes |
+|--------|-------|
+| Venue image layout | Label overlay scoped to `.venue-image-frame` only — was anchored to full wrap and overlapped the Google Maps link |
+| Map link | Larger padding/font; sits below image frame with clear gap |
+
+### Docs updated
+
+- `docs/update-history.docs.md` — this entry
+
+---
+
+## 2026-06-17 — SEO audit recommendations (Open WebUI)
+
+**Based on:** Open WebUI SEO audit of `https://www.aibizcon.me/`  
+**Integrated into:** `index.html`
+
+### Implemented
+
+| Change | Notes |
+|--------|-------|
+| JSON-LD expansion | `FAQPage` (8 Q&amp;A), `Person` performers on `Event`, postal code, free-ticket `Offer`, event `url`/`image` |
+| Internal links | Contextual in-section links (hero, about, agenda, speakers, register, location, sponsors, FAQ) |
+| Footer Connect | Eventbrite registration link added |
+| Title &amp; keywords | Reverted audit-only keyword phrases; title/keywords match developer-facing copy only |
+| Link styling | `.section-body a` / `.hero-desc a` use site cyan |
+
+### Reverted (developer content authority)
+
+Audit-suggested keyword targets (**CISO networking event**, **compliance workshop 2026**, **cybersecurity leadership conference**, **NIST framework training**) were removed from `<title>` and `meta keywords`. Those phrases are not in the developer’s body copy; SEO meta should describe the page as written, not invent positioning.
+
+### Deferred (per site owner)
+
+| Item | Notes |
+|------|-------|
+| `favicon.ico` | Not added — no favicon asset yet |
+
+### Docs updated
+
+- `docs/update-history.docs.md` — this entry
+- `docs/deploy.docs.md` — structured data and favicon note
+- `.cursor/skills/aibizcon-seo/` — SEO-while-building skill (project pattern)
+
+---
+
 ## 2026-06-17 — Remove internal docs from llms.txt
 
 **Change:** Dropped `## Documentation` links to `docs/` and `README.md` from `llms.txt`. Those paths are maintainer-only (`robots.txt` disallows `/docs/`); listing them in a sitemap-listed file exposed URLs to crawlers without SEO benefit.

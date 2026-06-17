@@ -22,7 +22,7 @@ Read `docs/update-history.docs.md` before integrating a new delivery.
 **Do not rewrite developer body content.** When merging a developer delivery, change only what the site owner expects locally:
 
 1. **Hero layout** — centered stack; graphic under subtitle (see [reference.md](reference.md))
-2. **SEO / accessibility** — `<head>` meta, OG, Twitter, JSON-LD; skip link; `<main id="main-content">`
+2. **SEO / accessibility** — follow [aibizcon-seo](../aibizcon-seo/SKILL.md): `<head>` meta, OG, Twitter, JSON-LD; skip link; `<main id="main-content">`
 3. **Year fixes** — align location/footer dates with hero when developer left 2025 behind
 
 Keep nav, agenda, speakers, sponsors, FAQ, register, and hero copy as delivered unless the user asks otherwise.
@@ -101,3 +101,4 @@ After integration: `npx serve .` and verify no hero gap.
 ## Additional resources
 
 - Hero layout, docs sync detail, merge checklist: [reference.md](reference.md)
+- SEO rules, schema, crawl files, audit handling: [aibizcon-seo](../aibizcon-seo/SKILL.md)

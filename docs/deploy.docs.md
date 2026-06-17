@@ -103,7 +103,7 @@ DNS can take up to 24–48 hours to propagate globally; often it is much faster.
 The site ships with:
 
 - Meta description, canonical URL, and Open Graph / Twitter tags in `index.html`
-- JSON-LD structured data (`Event`, `Organization`, `WebSite`, `FAQPage`)
+- JSON-LD structured data in `index.html`: `WebSite`, `Organization`, `Event` (AIBIZCON 2026 with performers and free registration), and `FAQPage` (eight on-page questions)
 - `robots.txt` and `sitemap.xml` at the repo root (`/docs/` and `/.cursor/` disallowed for crawlers)
 - `llms.txt` at the repo root — a curated, LLM-readable overview per the [llms.txt specification](https://llmstxt.org/)
 
@@ -118,6 +118,8 @@ After deploy, submit the sitemap in [Google Search Console](https://search.googl
 The sitemap lists the homepage and `llms.txt` only. Internal paths under `docs/` and `.cursor/` are blocked in `robots.txt` and excluded from the sitemap.
 
 Optional: add an `og:image` (1200×630) hosted at a public URL for richer social previews.
+
+Optional: add `favicon.ico` at the repo root when a brand icon is ready (browsers request `/favicon.ico` by default).
 
 ### LLMs and agents
 
