@@ -1,12 +1,15 @@
 # rbbs.aibizcon
 
-Static marketing site for CCBIZCON, built as a single HTML page with no build step.
+Static marketing site for AIBIZCON/CCBIZCON, built as a single HTML page with no build step.
 
 ## What this repo contains
 
 - `index.html` - the complete landing page (HTML, CSS, and JavaScript in one file)
+- `llms.txt` - LLM-friendly site summary and doc links ([llms.txt spec](https://llmstxt.org/))
+- `robots.txt` and `sitemap.xml` - search engine crawlers
 - `docs/homepage.docs.md` - structure and implementation notes for the homepage
 - `docs/deploy.docs.md` - deployment guide for GitHub Pages + Cloudflare
+- `docs/update-history.docs.md` - changelog of web developer deliveries
 - `CNAME` - GitHub Pages custom domain (`www.aibizcon.me`)
 
 ## Tech stack
@@ -46,8 +49,12 @@ See `docs/deploy.docs.md` for the full step-by-step guide and domain setup for `
 rbbs.aibizcon/
 ├── CNAME
 ├── index.html
+├── llms.txt
 ├── README.md
+├── robots.txt
+├── sitemap.xml
 └── docs/
+    ├── deploy.docs.md
     ├── homepage.docs.md
-    └── deploy.docs.md
+    └── update-history.docs.md
 ```

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /docs/
+Disallow: /.cursor/
+
+Sitemap: https://www.aibizcon.me/sitemap.xml

@@ -1,0 +1,24 @@
+# AIBIZCON
+
+> AIBIZCON — free Bay Area conference on AI, governance, risk, and compliance. Marketing site at www.aibizcon.me (static HTML, GitHub Pages + Cloudflare).
+
+**AIBIZCON 2026** — September 17, 2026 · 1:00 PM – 5:00 PM · Brentwood, CA
+
+The hero also lists a companion **CCBIZCON** line (September 18, 2026). Page body content matches the developer delivery; SEO and layout fixes were applied locally.
+
+Registration: https://ccbizcon2026.eventbrite.com · Contact: info@aibizcon.com
+
+## Site
+
+- [Homepage](https://www.aibizcon.me/): Landing page — about, agenda, speakers, sponsors, FAQ, location, registration
+
+## Registration & contact
+
+- [Eventbrite registration](https://ccbizcon2026.eventbrite.com): AIBIZCON 2026 registration
+- [aibizcon.com](https://aibizcon.com): Related conference site
+- Email: info@aibizcon.com
+
+## Optional
+
+- [robots.txt](https://www.aibizcon.me/robots.txt): Crawler directives (`/docs/` and `/.cursor/` disallowed)
+- [sitemap.xml](https://www.aibizcon.me/sitemap.xml): Homepage and llms.txt

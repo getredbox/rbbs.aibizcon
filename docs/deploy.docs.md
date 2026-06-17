@@ -98,6 +98,35 @@ DNS can take up to 24–48 hours to propagate globally; often it is much faster.
 
 ---
 
+## 6. SEO and LLM discoverability after launch
+
+The site ships with:
+
+- Meta description, canonical URL, and Open Graph / Twitter tags in `index.html`
+- JSON-LD structured data (`Event`, `Organization`, `WebSite`, `FAQPage`)
+- `robots.txt` and `sitemap.xml` at the repo root (`/docs/` and `/.cursor/` disallowed for crawlers)
+- `llms.txt` at the repo root — a curated, LLM-readable overview per the [llms.txt specification](https://llmstxt.org/)
+
+### Search engines
+
+After deploy, submit the sitemap in [Google Search Console](https://search.google.com/search-console):
+
+1. Add property: `https://www.aibizcon.me`
+2. Verify ownership (DNS TXT record in Cloudflare is easiest)
+3. Submit sitemap URL: `https://www.aibizcon.me/sitemap.xml`
+
+The sitemap lists the homepage and `llms.txt` only. Internal paths under `docs/` and `.cursor/` are blocked in `robots.txt` and excluded from the sitemap.
+
+Optional: add an `og:image` (1200×630) hosted at a public URL for richer social previews.
+
+### LLMs and agents
+
+`llms.txt` lives at **`https://www.aibizcon.me/llms.txt`** after deploy. It summarizes the public site and points to registration and contact details for LLM inference-time use — not for search indexing. Do **not** link to `docs/` or `README.md` in `llms.txt`; those are maintainer-only (`docs/` is blocked in `robots.txt`).
+
+When updating the site, keep `llms.txt` in sync with event dates and public URLs. Maintainer docs under `docs/` are updated separately (see `docs/update-history.docs.md`).
+
+---
+
 ## Alternative: Cloudflare Pages only
 
 If you prefer not to use GitHub Pages, you can connect the same repo to **Cloudflare Pages** (build command: none; output directory: `/`). That replaces GitHub as the host while keeping DNS in Cloudflare. The steps above assume **GitHub Pages + Cloudflare DNS**, which is the default for this project.
