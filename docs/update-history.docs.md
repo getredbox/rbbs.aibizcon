@@ -4,6 +4,33 @@ Changelog of content and layout updates delivered by the external web developer 
 
 ---
 
+## 2026-06-18 — Developer update (stats + Mark Adair)
+
+**Based on:** `temp/index.20260618-update.html` (developer delivery)  
+**Compared to:** commit `b241681`  
+**Integrated into:** `index.html`
+
+### From developer delivery
+
+| Change | Notes |
+|--------|-------|
+| Stats strip | Hours of Content: `4+` → `12+` |
+| Mark Adair | Role: IT Business Owner, Adair Technology Compliance; updated headshot image |
+
+### Fixed locally (not in raw developer file)
+
+| Change | Notes |
+|--------|-------|
+| Year | Location date and footer remain **2026** (developer file had 2025) |
+| SEO / a11y / links | Production `<head>`, JSON-LD, skip link, internal section links, hero layout unchanged |
+
+### Docs updated
+
+- `docs/update-history.docs.md` — this entry
+- `docs/homepage.docs.md` — stats strip note
+
+---
+
 ## 2026-06-17 — Location map link visibility
 
 **Integrated into:** `index.html`

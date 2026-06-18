@@ -71,7 +71,7 @@ This was authored directly in SVG inside the HTML (no image files).
 |---------|--------------|---------|
 | Nav | fixed `<nav>` | Anchor links + “Register Now” CTA |
 | Hero | `.hero` | Title, subtitle, CTAs, event stats bar |
-| Stats strip | `.stats-strip` | 4+ hours, 10+ speakers, 6 frameworks, Bay Area |
+| Stats strip | `.stats-strip` | 12+ hours, 12+ speakers, 6 frameworks, Bay Area |
 | About | `#about` | Three topic pillars + “Who Should Attend” |
 | Frameworks | `.frameworks` | PCI, NIST, GLBA, CMMC, HIPAA, SOC 2, ISO 27001, AI Act |
 | Agenda | `#agenda` | 1:00–4:30 PM schedule (6 blocks) |
