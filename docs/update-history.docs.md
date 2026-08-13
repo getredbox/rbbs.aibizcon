@@ -4,6 +4,46 @@ Changelog of content and layout updates delivered by the external web developer 
 
 ---
 
+## 2026-08-12 20:35:56 — Developer update (speakers + sponsors)
+
+**Source:** `temp/20260812 Updates/ccbizcon-website (2).html`  
+**Compared to:** production `index.html` (post–2026-06-18 local fixes)  
+**Integrated into:** `index.html` (+ docs / `llms.txt` / `images/` listed below)
+
+### From developer delivery
+
+| Change | Notes |
+|--------|-------|
+| Speakers | Replaced Gretchen Evans with **Mike Pawlawski**; removed **Crystal Conkle** (11 speakers) |
+| Sponsors | New **Diamond** tier (CCA, Sutter Health); Gold adds Galactic Advisors; refreshed Edward Jones logo; Bronze adds Global Office Inc, Starbucks - Streets of Brentwood, Cytracom |
+| Assets | New logos/headshot copied into `images/` (HTML remains base64-inlined) |
+
+### Fixed locally (hero / SEO / a11y / year)
+
+| Change | Notes |
+|--------|-------|
+| Hero / SEO / a11y | Kept production `<head>`, skip link, `<main id="main-content">`, centered `hero-main` / `hero-copy` stack |
+| Year | Location date and footer remain **2026** (developer file had 2025) |
+| Internal links | Kept production section intro links (speakers, sponsors, etc.) |
+| Alt text | Corrected Mike Pawlawski `alt` (developer file still said Gretchen Evans) |
+| JSON-LD | Refreshed `Event.performer` list to match new speakers |
+| Responsive | Diamond sponsor cards full-width on small screens (same as gold) |
+
+### Docs updated
+
+- `docs/update-history.docs.md` — this entry
+- `docs/homepage.docs.md` — event dates, speakers/sponsors structure
+- `llms.txt` — speaker/sponsor summary line
+
+### Follow-up items
+
+- FAQ still says “Gold, Silver, and Bronze” (no Diamond) — leave until developer updates copy
+- Stats strip still shows “12+ Expert Speakers” with 11 listed
+- New diamond/gold/bronze sponsor cards mostly lack outbound `href`s (as delivered)
+- Optional: wire base64 embeds to `images/` file paths later
+
+---
+
 ## 2026-06-18 — Developer update (stats + Mark Adair)
 
 **Based on:** `temp/index.20260618-update.html` (developer delivery)  

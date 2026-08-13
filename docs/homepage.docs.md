@@ -1,19 +1,20 @@
 # Homepage
 
-Documentation for how `index.html` was created and how it is structured.
+Documentation for how `index.html` is structured and maintained.
 
 ## Purpose
 
-`index.html` is a single-page marketing site for **CCBIZCON 2025** — a free Bay Area event on AI, governance, risk, and compliance. The page promotes registration, agenda, speakers, sponsors, and FAQ content, with outbound links to [ccbizcon.com](https://ccbizcon.com).
+`index.html` is a single-page marketing site for **AIBIZCON 2026** — a free Bay Area event on AI, governance, risk, and compliance. The page promotes registration, agenda, speakers, sponsors, and FAQ content.
 
 **Event details baked into the page:**
 
 | Field | Value |
 |-------|-------|
-| Date | September 17, 2025 |
-| Time | 1:00 PM – 5:00 PM |
-| Location | Brentwood, CA (East Bay) |
-| Contact | info@ccbizcon.com |
+| Primary event | **AIBIZCON** · September 17, 2026 · 1:00 PM – 5:00 PM |
+| Companion (hero) | **CCBIZCON** · September 18, 2026 · 9:00 AM – 5:00 PM |
+| Location | Brentwood, CA (East Bay) — 35 Oak St |
+| Registration | https://ccbizcon2026.eventbrite.com |
+| Contact | info@aibizcon.com |
 
 ---
 
@@ -21,117 +22,106 @@ Documentation for how `index.html` was created and how it is structured.
 
 ### Approach
 
-The homepage was built as **one self-contained HTML file** (~1,929 lines). There is no build step, bundler, or framework — open the file in a browser to preview.
+The homepage is **one self-contained HTML file** (~2,377 lines). There is no build step, bundler, or framework — open the file in a browser to preview.
 
 | Layer | Location in `index.html` | Notes |
 |-------|--------------------------|-------|
-| Structure | `<body>` (~lines 1163–1891) | Semantic sections with HTML comments |
-| Styles | `<style>` in `<head>` (~lines 9–1161) | All CSS inline; no external stylesheet |
-| Behavior | `<script>` before `</body>` (~lines 1893–1926) | Vanilla JS only |
+| SEO / JSON-LD | `<head>` | AIBIZCON-first meta, OG, Twitter, Event + FAQPage schema |
+| Styles | `<style>` in `<head>` | All CSS inline; no external stylesheet |
+| Structure | `<body>` | Skip link, `<main id="main-content">`, semantic sections |
+| Behavior | Inline `<script>` before `</body>` | Vanilla JS only |
 
 **External dependencies (CDN only):**
 
 - [Google Fonts](https://fonts.googleapis.com): Bebas Neue (display), Barlow Condensed (labels/UI), Barlow (body)
 
-No npm packages, React, or asset pipeline.
+No npm packages, React, or asset pipeline. Speaker/sponsor images are **base64-inlined** in HTML; matching files also live under `images/` for asset inventory.
 
 ### Design direction
 
-A dark, tech-forward visual system was defined with CSS custom properties:
+A dark, tech-forward visual system with CSS custom properties (`--cyan`, `--magenta`, `--dark-bg`, `--card-bg`). Motifs include a fixed grid overlay, hero glow blobs, scanline overlay, angled clip-path buttons, and scroll-triggered `.fade-up` reveals.
 
-```css
---cyan: #00F5FF;
---magenta: #C840E9;
---dark-bg: #0A0A12;
---card-bg: #0F0F1E;
-```
+### Hero layout (canonical — do not regress)
 
-**Visual motifs:**
+Centered stack inside `.hero-main` > `.hero-copy`:
 
-- Fixed 60px grid overlay on `body::before`
-- Radial glow blobs in the hero
-- Scanline overlay on `.hero::after`
-- Angled “cut” buttons via `clip-path: polygon(...)`
-- Scroll-triggered `.fade-up` reveals
+1. Dual `.hero-tag` lines (AIBIZCON + CCBIZCON)
+2. `.hero-title` / `.hero-subtitle`
+3. `.hero-ai-graphic` (neural-network SVG under subtitle; height capped at 180px)
+4. Description + CTAs
+5. `.hero-event-bar`
 
-### Hero: animated neural-network SVG
-
-The hero includes a custom inline SVG (~lines 1185–1365) — a 5-layer network graphic with:
-
-- Static dim connection lines between layers
-- Animated gradient “signal” paths (`lineFlow1`–`lineFlow3` with SMIL `<animate>`)
-- Glowing node halos, rings, and cores in cyan/magenta
-- Layer labels: INPUT → LAYER 1 → CORE → LAYER 3 → OUTPUT
-
-This was authored directly in SVG inside the HTML (no image files).
+Do not use `.hero > * { position: relative }` or place the SVG before the title — both create a large empty gap.
 
 ### Content sections (top to bottom)
 
 | Section | `id` / class | Purpose |
 |---------|--------------|---------|
-| Nav | fixed `<nav>` | Anchor links + “Register Now” CTA |
-| Hero | `.hero` | Title, subtitle, CTAs, event stats bar |
-| Stats strip | `.stats-strip` | 12+ hours, 12+ speakers, 6 frameworks, Bay Area |
-| About | `#about` | Three topic pillars + “Who Should Attend” |
-| Frameworks | `.frameworks` | PCI, NIST, GLBA, CMMC, HIPAA, SOC 2, ISO 27001, AI Act |
-| Agenda | `#agenda` | 1:00–4:30 PM schedule (6 blocks) |
-| Speakers | `#speakers` | Four placeholder speaker cards |
-| Register | `#register` | Client-side form (no backend) |
-| Location | `#location` | Date/time/venue + map placeholder |
-| Sponsors | `#sponsors` | Gold / Silver / Bronze placeholder slots |
+| Nav | fixed `<nav aria-label>` | Anchor links + Eventbrite CTA |
+| Hero | `.hero` | Dual event tags, title, graphic, CTAs, event bar |
+| Stats strip | `.stats-strip` | 12+ hours, 12+ speakers, 6 topics, Bay Area |
+| About | `#about` | Topic pillars + “Who Should Attend” |
+| Agenda | `#agenda` | Afternoon session schedule |
+| Speakers | `#speakers` | 11 featured speakers (incl. Mike Pawlawski) |
+| Register | `#register` | Eventbrite CTA |
+| Location | `#location` | Venue, map link, Sept 17 **2026** |
+| Sponsors | `#sponsors` | Diamond / Gold / Silver / Bronze |
 | FAQ | `#faq` | 8 accordion items |
-| Footer | `<footer>` | Links + © 2025 |
+| Footer | `<footer>` | Links + © **2026** |
+
+### Sponsors (current)
+
+- **Diamond:** CCA Business & Technology Advisors, Sutter Health
+- **Gold:** BLOKWORX, Edward Jones, Structure Groups, The 20, Galactic Advisors
+- **Silver:** 4× “Your Logo” placeholders
+- **Bronze:** BizBotz, First Citizens Bank, Little Owl Design, Global Office Inc, Starbucks - Streets of Brentwood, Cytracom
 
 ### JavaScript (minimal)
 
-Three behaviors at the bottom of the file:
-
-1. **`IntersectionObserver`** — adds `.visible` to `.fade-up` elements on scroll
-2. **`toggleFaq(item)`** — accordion; only one FAQ open at a time
-3. **`handleRegister()`** — validates required fields; on success opens `https://ccbizcon.com` in a new tab (form is not submitted to a server)
-
-### Placeholder content to replace later
-
-These areas use template/placeholder copy and should be updated when real assets exist:
-
-- **Speakers** — fictional names (Jordan Chen, Aisha Morales, etc.)
-- **Sponsors** — “Your Logo” cards in Gold/Silver/Bronze tiers
-- **Map** — `.map-placeholder` instead of an embedded map
-- **Registration** — collects input locally then redirects to ccbizcon.com
+1. **`IntersectionObserver`** — adds `.visible` to `.fade-up` on scroll
+2. **`toggleFaq(item)`** — accordion; one open at a time
+3. **`handleRegister()`** — opens Eventbrite registration URL
 
 ---
 
 ## How to view and edit
 
-**Preview:** Double-click `index.html` or run from the project root:
+**Preview:**
 
 ```bash
-# Optional: local server (avoids some file:// quirks)
 npx serve .
 ```
 
 **Edit workflow:**
 
-1. **Copy** — search the file for event names, dates, emails, and agenda text
-2. **Styles** — change tokens in `:root` at the top of `<style>` for global theme updates
-3. **Sections** — each block is marked with `<!-- NAV -->`, `<!-- HERO -->`, etc.
-4. **New section** — copy an existing `<section>`, add a nav link, and reuse `.section-tag` / `.section-title` / `.fade-up` patterns
+1. Prefer integrating developer deliveries via the `aibizcon-developer-update` skill (keep hero/SEO/a11y/year fixes)
+2. **Styles** — tokens in `:root` at the top of `<style>`
+3. **Sections** — marked with HTML comments; reuse `.section-tag` / `.section-title` / `.fade-up`
+4. After `index.html` changes, update `docs/update-history.docs.md` and related docs/`llms.txt`
 
-**Responsive:** Breakpoint at `768px` hides nav links and stacks grids to a single column.
+**Responsive:** Breakpoint at `768px` hides nav links and stacks grids.
 
 ---
 
 ## Project layout
 
 ```
-Seana Bizcon/
-├── index.html          # Full homepage (this file)
+rbbs.aibizcon/
+├── index.html
+├── images/                 # Logos and headshots (also base64 in HTML)
+├── llms.txt
+├── robots.txt
+├── sitemap.xml
+├── CNAME
+├── temp/                   # gitignored scratch (developer drops, scripts)
 └── docs/
-    └── homepage.docs.md
+    ├── homepage.docs.md
+    ├── deploy.docs.md
+    └── update-history.docs.md
 ```
 
 ---
 
 ## Summary
 
-`index.html` was created as a **zero-dependency, single-file landing page**: embedded CSS design system, inline animated SVG hero, anchor-based single-page navigation, and light vanilla JS for scroll animation, FAQ accordion, and registration redirect. No separate assets folder — everything ships in one file for easy hosting (static file server, S3, Netlify, or email attachment).
+`index.html` is a **zero-dependency, single-file landing page** for AIBIZCON 2026: embedded CSS, inline hero SVG, Eventbrite CTAs, and light vanilla JS. Production keeps local hero layout, SEO, and accessibility shells when merging developer body updates.
